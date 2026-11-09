@@ -188,3 +188,59 @@ header.header {
   width: 100%;
   border-top: 2px solid #6fc0a6 !important;
 } */ 
+
+/* EJL147: overzicht van de twee vluchtgroepen, toegevoegd november 2026. */
+.lustrum-vluchtsectie { margin: 24px auto 42px; padding: 0 20px; }
+.lustrum-vluchtsectie__binnen { max-width: 1110px; margin: 0 auto; padding: 28px 30px; border: 1px solid #b8ded1; border-radius: 12px; background: #f5faf8; color: #273b33; box-sizing: border-box; }
+.lustrum-vluchtsectie__label { margin: 0 0 8px; font: 700 12px/1.5 Arial,sans-serif; letter-spacing: 0.11em; color: #55907c; }
+.lustrum-vluchtsectie__titel { margin: 0 0 12px; color: #356f5b !important; font: 700 clamp(22px, 3vw, 30px)/1.25 Arial,sans-serif !important; }
+.lustrum-vluchtsectie__intro { font-size: 16px; line-height: 1.6; margin: 0 0 22px; color: #273b33; }
+.lustrum-vluchtsectie__raster { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.lustrum-vluchtkaart { min-width: 0; padding: 20px; border: 1px solid #d9ebe4; border-radius: 10px; background: #fff; box-sizing: border-box; }
+.lustrum-vluchtkaart__groep { display:flex; justify-content:space-between; align-items:center; gap:8px; margin: 0 0 8px; font: 700 13px/1.4 Arial,sans-serif; color:#55907c; }
+.lustrum-vluchtkaart__groep span, .lustrum-vluchtsectie__terugkop span { background:#e4f4ed; border-radius: 100px; padding:5px 11px; font-size:12px; white-space:nowrap; }
+.lustrum-vluchtkaart h3 { margin:0 0 16px; font:700 17px/1.35 Arial,sans-serif; color:#273b33; }
+.lustrum-vluchtkaart__route { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.lustrum-vluchtkaart__route > div:not(.lustrum-vluchtkaart__pijl) { display:flex; flex-direction:column; min-width:0; gap:4px; }
+.lustrum-vluchtkaart__route strong { color:#273b33; font-size:27px; font-weight:700; line-height:1.15; white-space:nowrap; }
+.lustrum-vluchtkaart__route strong small { color:#55907c; font-size:12px; vertical-align:middle; }
+.lustrum-vluchtkaart__route span { font-size:13px; color:#45574f; }
+.lustrum-vluchtkaart__route small { color:#6c7773; font-size:12px; }
+.lustrum-vluchtkaart__pijl { color:#55907c; font-size:26px; flex:0 0 auto; }
+.lustrum-vluchtkaart__details { border-top:1px solid #e0eee8; margin:18px 0 0; padding-top:12px; color:#546960; font-size:12px; line-height:1.5; }
+.lustrum-vluchtsectie__terug { background:#e4f4ed; border-radius:10px; padding:20px; margin-top:16px; }
+.lustrum-vluchtsectie__terugkop { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; font:700 16px/1.4 Arial,sans-serif; color:#273b33; }
+.lustrum-vluchtsectie__terugroute { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px; font-size:16px; color:#273b33; }
+.lustrum-vluchtsectie__terugroute strong { font-size:20px; }
+.lustrum-vluchtsectie__terug p { margin:10px 0 0; font-size:12px; color:#4b6a5e; }
+.lustrum-vluchtsectie__voet { font-size:12px; line-height:1.65; color:#4c6257; margin:16px 0 0; }
+@media (max-width:760px) { .lustrum-vluchtsectie { padding:0 12px; } .lustrum-vluchtsectie__binnen { padding:20px 16px; } .lustrum-vluchtsectie__raster { grid-template-columns:1fr; } .lustrum-vluchtkaart { padding:17px; } .lustrum-vluchtkaart__route strong { font-size:24px; } .lustrum-vluchtsectie__terugroute { gap:8px; } }
+
+
+/* Delft - Eindhoven Airport: heen- en terugreis, indicatieve OV-tijden. */
+.lustrum-vluchtkaart__voorreis { margin-top: 17px; padding: 15px 16px; background: #f5faf8; border: 1px solid #e0eee8; border-radius: 8px; }
+.lustrum-vluchtsectie__nareis { margin-top: 14px; padding: 15px 16px; background: rgba(255,255,255,0.7); border: 1px solid #c4e5d7; border-radius: 8px; }
+.lustrum-vluchtkaart__stappentitel { margin: 0 0 11px !important; font: 700 13px/1.4 Arial,sans-serif !important; color: #356f5b !important; }
+.lustrum-vervoerstappen { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.lustrum-vervoerstappen li { margin: 0; padding: 0; display: grid; grid-template-columns: 78px minmax(0,1fr); gap: 10px; align-items: baseline; font: 13px/1.4 Arial,sans-serif; color: #273b33; }
+.lustrum-vervoerstappen li strong { color: #356f5b; font-weight: 700; white-space: nowrap; }
+.lustrum-vervoerstappen li span { min-width: 0; }
+@media (max-width: 480px) { .lustrum-vervoerstappen li { grid-template-columns: 74px minmax(0,1fr); gap: 7px; font-size: 12px; } }
+
+
+/* Nieuw lokaal Lustrumgooner-portret: vierkant, zonder vervorming. */
+img.lustrumgooner-portret {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+img.neve-site-logo.lustrumgooner-portret {
+  width: 64px !important;
+  height: 64px !important;
+  max-width: 64px !important;
+}
+img.wp-image-1781.lustrumgooner-portret { width:52px !important; height:52px !important; }
+img.wp-image-1306.lustrumgooner-portret { width:67px !important; height:67px !important; }

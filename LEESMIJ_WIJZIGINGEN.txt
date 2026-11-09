@@ -1,0 +1,60 @@
+EJL147 LUSTRUMVAKANTIE – TAALKUNDIG OPGESCHOONDE VERSIE
+9 november 2026
+
+AANGEPAST
+- Spelfouten, grammatica, hoofdletters, leestekens en inconsistente kopjes in index.html.
+- Hoofdtitel Albanië -> Armenië; oude Nepal-/Albanië-informatie in de socialmediavoorvertoning gecorrigeerd.
+- Volledige per ongeluk geplakte Nepal-alinea onder dag 6 verwijderd.
+- Dagkoppen in de zichtbare reisroute genummerd van 1 t/m 14: voorheen dag 12 Yenokavan is nu dag 11, voorheen dag 13 Sevanmeer is nu dag 12. Azhdahak is nu dag 13 (alternatief). Ballonvaart is gelabeld als extra optie voor dag 13.
+- Foutieve expliciete overnachtingsdatum op dag 4 vervangen door neutrale formulering; geen nieuwe datum verzonnen.
+- De teksten voor prijsoverzicht en footer taalkundig gecorrigeerd.
+
+ONVERANDERD OF NOG TE CONTROLEREN
+- De route, feitelijke activiteiten, kosten en overnachtingen zijn inhoudelijk niet geverifieerd; de dagnummering is alleen een logische hernummering van de bestaande volgorde.
+- Onder dag 6 staat 'Overnachting: Lori', terwijl op dag 7 de reis naar Lori wordt beschreven. Dit vergt een reisinhoudelijke keuze.
+- Controleer e-mailadres 'jan.backer2@gmail.com.nl' voordat je de site deelt.
+- Controleer of genoemde SGR-/Calamiteitenfonds-garanties en voorwaarden echt op jullie boekingen van toepassing zijn. Deze oude tekst is niet inhoudelijk bevestigd.
+- De oorspronkelijke menu- en trackingcode verwijst soms naar andere bestemmingen van Lustrumgooner; dat is geen inhoud van het Armenië-reisprogramma.
+
+PUBLICEREN
+1. Maak eerst een reservekopie van de bestaande GitHub-repository.
+2. Pak de zip uit en upload de gewijzigde index.html (en desgewenst deze toelichting) naar dezelfde repository.
+3. Voor de tekstaanpassingen hoef je style.css en de afbeeldingsbestanden niet te vervangen.
+4. Controleer de pagina nadat GitHub Pages de wijziging heeft verwerkt.
+
+
+Aanvulling – vluchten en contactgegevens (9 november 2026):
+- Groep 1 (8 personen): vrijdag 13 augustus 2027, vertrek Eindhoven 18.15; aankomst Jerevan zaterdag 14 augustus 00.55.
+- Groep 2 (3 personen): maandag 16 augustus 2027, vertrek Eindhoven 18.15; aankomst Jerevan dinsdag 17 augustus 00.55.
+- Alle 11 personen samen terug: vrijdag 27 augustus 2027, vertrek Jerevan 14.50; aankomst Eindhoven 17.40.
+- Wizz Air, directe retourvlucht, economy. Getoonde indicatie € 237 p.p. (prijs kan wijzigen).
+- Een overzichtelijk vluchtblok toegevoegd vóór het dagprogramma.
+- De 14 dagelijkse koppen voorzien van kalenderdata; teksten van dagen 1 t/m 4 en 14 aangepast aan beide vluchtgroepen.
+- Zichtbaar e-mailadres gecorrigeerd naar jan.backer2@gmail.com.
+- De planning voor dagen 2-3 blijft verder open; latere reisactiviteiten zijn ongemoeid gelaten.
+
+
+Aanvulling – OV via Eindhoven Airport (9 november 2026):
+- Beide heenvluchtgroepen: vertrek Delft 13.15 uur met trein en bus; geplande aankomst Eindhoven Airport 15.15 uur (2 uur reistijd); 3 uur aanwezig vóór vertrek vlucht om 18.15 uur.
+- Gezamenlijke terugvlucht 27 augustus: landing Eindhoven Airport 17.40 uur; 1 uur op luchthaven, gepland vertrek 18.40 uur; 2 uur bus + trein; verwachte aankomst Delft 20.40 uur.
+- Deze tijden zijn berekend vanuit de opgegeven reistijden en wachttijden. Er zijn nog geen concrete OV-diensten of aansluitingen geverifieerd.
+- Nieuw visueel stappenoverzicht voor beide heenvluchten en de terugreis; beschrijvingen van dag 1, dag 4 en dag 14 bijgewerkt.
+
+Update reisverzekering: garantieregelingen vervangen door advies om op tijd een uitgebreide (kortlopende) reisverzekering af te sluiten. Losse garantie-/branchelogo's verwijderd.
+
+
+Aanvulling - volledige naamswijziging oude hyperlinks (9 november 2026):
+- Alle letterlijke verwijzingen naar de oude merknaam vervangen door lustrumgooner, ook in klikbare links, sociale profielen, e-mailadressen, technische script-, stylesheet- en afbeeldings-URL’s in index.html.
+- OPGELET: verwijzingen naar lustrumgooner.nl en de aangepaste sociale profielen zijn niet gecontroleerd en werken mogelijk niet. Omdat ook externe CSS-, JS- en afbeeldingsbronnen zijn omgezet, kunnen delen van de website hun opmaak of functionaliteit verliezen.
+
+
+Aanvulling - nieuw Lustrumgooner-portret in logo's (9 november 2026):
+- Nieuw lokaal bestand lustrumgooner-portret.png toegevoegd.
+- Twee headerlogo's, drie kleine pictogrammen en het footerlogo vervangen door het portret.
+- Het portret wordt rond getoond met correcte verhoudingen.
+- Lokale favicons voor browser / mobiel toegevoegd (32, 180, 192, 270 px).
+- Linkvoorbeelden (Open Graph en Twitter/X) verwijzen naar het portret op de GitHub Pages website.
+- Alleen de twee headerlogo-links en de footerlogo-link verwijzen nu naar de huidige website (./).
+- Ook style.css gewijzigd voor vormgeving van de vierkante logo's.
+- Alle overige externe links en eerder genoemde mogelijk niet werkende technische bronnen zijn ongemoeid gelaten.
+- Upload index.html, style.css, het portret en de vier favicons om deze update online te zetten.
