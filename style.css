@@ -1,163 +1,3 @@
-/* EJL147 Lustrumgooner – zelfstandig ontwerp, geen WordPress/Elementor nodig. */
-:root { --mint:#6fc0a6; --green:#55907c; --forest:#315c4e; --ink:#24352e; --muted:#62756c;
- --paper:#ffffff; --soft:#f1f7f3; --line:#d9e8df; --site-max:1140px; }
-* { box-sizing: border-box; }
-html { scroll-behavior:smooth; scroll-padding-top:90px; }
-body { margin:0; background:#fff; color:var(--ink); font-family:Arial, Helvetica, sans-serif;
- line-height:1.68; font-size:16px; overflow-x:hidden; }
-img,svg,video { max-width:100%; } img { height:auto; }
-a { color:#327a60; text-underline-offset:3px; } a:hover { color:#225641; }
-h1,h2,h3,h4,h5 { color:var(--forest); line-height:1.22; margin:0 0 .7em; }
-p { margin:0 0 1em; } ul,ol { padding-left:1.3rem; } li { margin-bottom:.28rem; }
-button { font:inherit; } ::selection { background:#b6e1d0; color:#183f31; }
-.skip-link {position:absolute; top:-100px;left:5px;background:white;padding:10px;z-index:1000}
-.skip-link:focus{top:5px}
-.site-header{background:#fff; border-bottom:1px solid #e0eae3; position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(22,62,47,.05)}
-.site-header__inner{max-width:var(--site-max);margin:auto;padding:8px 20px;display:flex;gap:22px;justify-content:space-between;align-items:center}
-.site-brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--forest);font-size:17px;font-weight:500;white-space:nowrap}
-.site-brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid #def1e7}
-.site-brand strong{font-weight:800}
-.site-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.site-nav a{font-size:13px;font-weight:700;color:#426f5d;border-radius:100px;padding:8px 12px;text-decoration:none;white-space:nowrap}
-.site-nav a:hover,.site-nav a:focus-visible{background:#e7f4ec;color:#23543e}
-main { min-height:65vh; }
-.elementor-107188 > section{ scroll-margin-top:88px; }
-.elementor-section{ position:relative; }
-.elementor-container{max-width:var(--site-max);width:100%;margin:0 auto;display:flex;flex-wrap:nowrap;align-items:stretch;gap:30px;padding-left:20px;padding-right:20px}
-.elementor-column {flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center}
-.elementor-col-100{flex:1 1 100%}
-.elementor-col-50{flex:1 1 50%}
-.elementor-col-33{flex:1 1 33.333%}
-.elementor-widget-wrap { width:100%; display:flex;flex-direction:column;gap:12px; }
-.elementor-widget{ width:100%;min-width:0 }
-.elementor-widget-container > :last-child{margin-bottom:0}
-.elementor-heading-title{font-family:Arial, Helvetica,sans-serif;color:var(--forest);font-weight:700;}
-.elementor-widget-heading h2 { font-size:clamp(20px,2.4vw,27px); }
-.elementor-widget-heading h3 { font-size:clamp(19px,2vw,24px); }
-.elementor-widget-heading h4 { font-size:18px; }
-.elementor-widget-text-editor {font-size:16px;line-height:1.75;}
-.elementor-widget-text-editor p { margin:0 0 1rem }
-.elementor-widget-text-editor h4 {font-size:16px;margin:1.2em 0 .4em;color:var(--ink)}
-.elementor-widget-text-editor strong{font-weight:700}
-.elementor-widget-image img { width:100%;display:block;object-fit:cover;border-radius:12px; }
-.elementor-widget-image a{display:block}
-.elementor-widget-divider .elementor-divider{height:1px;background:var(--mint);margin:3px 0;}
-.elementor-divider-separator {display:block}
-.elementor-widget-spacer .elementor-spacer {height:15px}
-.elementor-icon-list-items {padding:0;margin:0;list-style:none}
-.elementor-icon-list-item { display:flex; align-items:baseline; padding:5px 0; margin:0; font-size:14px; color:var(--muted)}
-.elementor-icon-list-item a {display:flex;align-items:baseline;color:inherit;text-decoration:none;gap:10px;}
-.elementor-icon-list-item > .elementor-icon-list-icon {width:26px;flex:0 0 26px;text-align:center;margin-right:8px}
-.elementor-icon-list-item a > .elementor-icon-list-icon {width:26px;flex:0 0 26px;text-align:center}
-.elementor-icon-list-icon{color:var(--mint)}
-.site-icon {font-style:normal;display:inline-block;color:#4f9d80;font-size:18px;font-family:Arial,'Apple Color Emoji','Segoe UI Emoji',sans-serif;line-height:1}
-.elementor-price-table__feature-inner .site-icon{font-size:17px;margin-right:8px;color:#449e7b}
-/* Title and introductory content */
-.site-title-section{padding:62px 0 18px;text-align:center;background:linear-gradient(180deg,#f0f8f4,#fff)}
-.site-title-section h2{font-size:clamp(30px,4.5vw,53px);font-weight:800;letter-spacing:-.045em;color:#4b957c}
-.site-title-section + section .elementor-divider{height:2px;margin:0 auto;max-width:100%}
-.site-intro{padding:32px 0 34px}
-.site-intro .elementor-widget-image img{height:255px;object-fit:cover}
-.site-intro .elementor-widget-icon-list{margin-top:12px}
-.site-video-intro{padding:20px 0 36px;background:var(--soft)}
-.site-video-intro .elementor-container{padding-top:26px;padding-bottom:12px}
-.site-video-link{display:block;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:16/9;background:#d4e5da;box-shadow:0 5px 18px rgba(26,81,59,.13)}
-.site-video-link img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75);transition:transform .25s}
-.site-video-link:hover img{transform:scale(1.03)}
-.site-video-play{display:block;position:absolute;bottom:18px;left:18px;color:white;background:rgba(26,72,52,.85);border-radius:100px;padding:10px 18px;font-size:15px;font-weight:700}
-.site-facts {padding:22px 0 16px}
-.site-facts .elementor-widget-heading .elementor-heading-title{font-size:20px;color:var(--green)}
-.site-facts .elementor-widget-image img{height:76px;width:76px;object-fit:cover;border-radius:50%;}
-.site-facts .elementor-widget-icon .elementor-icon{display:inline-flex;color:var(--green)}
-.site-program-label{padding:40px 0 10px;text-align:center}
-.site-program-label h2{font-size:clamp(23px,3vw,34px);color:var(--forest)}
-.site-legend {padding:6px 0 15px}
-.site-legend .elementor-icon-list-items{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
-/* Day program, alternating images / copy */
-.site-day{padding:42px 0;background:#fff}
-.site-day:nth-of-type(even){background:#fafcfb}
-.site-day .elementor-container{gap:42px;align-items:center}
-.site-day .elementor-widget-heading:nth-child(1) .elementor-heading-title { color:var(--mint);font-size:clamp(18px,2vw,23px);font-weight:800;margin-bottom:2px}
-.site-day .elementor-widget-heading:nth-child(2) .elementor-heading-title {font-size:clamp(23px,2.7vw,34px);color:#4d8e76;margin-bottom:10px}
-.site-day .elementor-widget-text-editor {font-size:15.6px}
-.site-day .elementor-widget-wrap{gap:11px}
-.site-day .elementor-widget-icon-list{padding-top:10px;border-top:1px solid var(--line)}
-.site-day .elementor-icon-list-items{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
-.site-day .elementor-icon-list-item{font-size:13px;min-width:100px}
-.site-day .elementor-icon-list-icon{font-size:18px}
-.site-day-divider{padding:0!important;background:#fff!important}
-.site-day-divider .elementor-divider {background:#a9d8c5;height:1px}
-.site-day-alternative{background:#f2f8f3}
-.site-day-alternative .elementor-heading-title{color:#548d70}
-.site-day .elementor-widget-image:not(:has(.foto-slider)) img{width:100%;max-height:400px;object-fit:cover}
-/* prices */
-.site-pricing{padding:52px 0 26px;background:linear-gradient(180deg,#eff8f3,#fff)}
-.site-pricing .elementor-container{gap:18px;align-items:stretch}
-.site-pricing .elementor-column{justify-content:stretch}
-.elementor-widget-price-table{height:100%}
-.elementor-widget-price-table .elementor-widget-container,.elementor-price-table{height:100%}
-.elementor-price-table{background:#fff;border:1px solid #d8e7dd;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(50,100,74,.09)}
-.elementor-price-table__header{padding:22px 16px;background:#55907c}
-.elementor-price-table__heading{margin:0;font-size:20px;color:#fff;text-align:center}
-.elementor-price-table__price{font-size:40px;font-weight:800;color:var(--forest);background:#e5f3e9;padding:17px 16px;text-align:center;line-height:1.25}
-.elementor-price-table__currency{font-size:27px}
-.elementor-price-table__features-list{list-style:none;margin:0;padding:22px 20px}
-.elementor-price-table__features-list li{font-size:14px;border-bottom:1px solid #edf1ed;padding:9px 1px;margin:0}
-.elementor-price-table__features-list li:last-child{border:0}
-.site-pricing .elementor-col-33:nth-child(2) .elementor-price-table__header{background:#45866b}
-.site-pricing .elementor-col-33:nth-child(3) .elementor-price-table__header{background:#658e7e}
-.site-notes{padding:17px 0}
-.site-notes .elementor-heading-title{font-size:23px;color:var(--forest)}
-.site-social{margin-top:28px;padding:32px 0;background:var(--soft)}
-.site-social .elementor-container{align-items:center}
-.site-social .elementor-social-icons-wrapper{display:flex;gap:12px;flex-wrap:wrap}
-.site-social a.elementor-social-icon{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;font-size:24px}
-.site-social a.elementor-social-icon .site-icon{color:#fff}
-.site-footer{padding:24px 0;background:#244c3c;color:#e6f4ec}
-.site-footer__inner{max-width:var(--site-max);padding:0 20px;margin:auto;display:flex;align-items:center;flex-wrap:wrap;gap:20px;font-size:14px}
-.site-footer img{border-radius:50%;object-fit:cover;width:66px;height:66px}
-.site-footer a{color:#d4f4e3;margin-left:auto}
-/* compatibility for some hidden Elementor widgets */
-.elementor-widget .elementor-wrapper {width:100%}
-.elementor-view-default .elementor-icon svg{width:30px;height:30px}
-.elementor-widget-icon-list .elementor-icon-list-items .elementor-icon-list-item .elementor-icon-list-text{min-width:0}
-.elementor-social-icon {display:inline-flex;align-items:center;justify-content:center}
-@media(max-width:800px){
-  html{scroll-padding-top:118px}
-  .site-header__inner{flex-wrap:wrap;justify-content:center;gap:4px 16px}
-  .site-nav{justify-content:center;gap:0}
-  .site-nav a{font-size:12px;padding:6px 8px}
-  .elementor-container{gap:22px}
-  .site-day .elementor-container{gap:20px}
-  .site-day .elementor-widget-text-editor{font-size:15px}
-  .site-pricing .elementor-container{gap:12px}
-  .elementor-price-table__features-list{padding:15px}
-  .site-title-section{padding:36px 0 18px}
-}
-@media(max-width:650px){
-  .site-brand img{width:42px;height:42px}
-  .site-brand{font-size:15px}
-  .site-header__inner{padding:6px 10px}
-  .site-nav a{font-size:11px;padding:5px 6px}
-  .elementor-container{flex-direction:column;gap:18px;padding:0 16px}
-  .elementor-column,.elementor-col-50,.elementor-col-33{width:100%;flex-basis:auto}
-  .elementor-widget-wrap{gap:8px}
-  .site-title-section h2{font-size:31px}
-  .site-intro,.site-video-intro{padding:24px 0}
-  .site-facts{padding:22px 0}
-  .site-day{padding:27px 0}
-  .site-day .elementor-container{gap:16px}
-  .site-day .elementor-widget-heading:nth-child(2) .elementor-heading-title{font-size:26px}
-  .site-day .elementor-widget-image{order:0}
-  .site-legend .elementor-icon-list-items{justify-content:flex-start;gap:10px}
-  .site-pricing{padding:32px 0}
-  .site-pricing .elementor-container{gap:16px}
-  .site-footer__inner{gap:8px;justify-content:center;text-align:center}
-  .site-footer a{margin:0 10px}
-}
-
-
-/* Bestaande opmaak: fotocarrousels, vluchtkaarten, portret */
 /* Fotokader met pijltjes */
 .elementor-107188 .elementor-top-section > .elementor-container:has(.foto-slider) {
   align-items: center;
@@ -326,6 +166,28 @@ header.header {
     margin-right: auto;
   }
 }
+
+/* Dag 15: dezelfde tekstkleur als de overige dagblokken
+.elementor-107188 .elementor-element-dag15 .elementor-heading-title,
+.elementor-107188 .elementor-element-dag15 .elementor-widget-text-editor,
+.elementor-107188 .elementor-element-dag15 .elementor-icon-list-text {
+  color: #6fc0a6 !important;
+}
+
+.elementor-107188 .elementor-element-dag15 .elementor-heading-title {
+  color: #6fc0a6 !important;
+}
+
+/* Blauwe scheidingslijn tussen dag 14 en dag 15 */
+/* .elementor-107188 .elementor-element-divider-dag15 > .elementor-container {
+  border-top: 2px solid #6fc0a6 !important;
+}
+
+.elementor-107188 .elementor-element-divider-dag15 .elementor-divider-separator {
+  display: block;
+  width: 100%;
+  border-top: 2px solid #6fc0a6 !important;
+} */ 
 
 /* EJL147: overzicht van de twee vluchtgroepen, toegevoegd november 2026. */
 .lustrum-vluchtsectie { margin: 24px auto 42px; padding: 0 20px; }
