@@ -244,3 +244,44 @@ img.neve-site-logo.lustrumgooner-portret {
 }
 img.wp-image-1781.lustrumgooner-portret { width:52px !important; height:52px !important; }
 img.wp-image-1306.lustrumgooner-portret { width:67px !important; height:67px !important; }
+
+
+/* 2026-11-09: routewijziging, nachtverdeling en 4x4-overzicht. */
+.lustrum-route-summary { padding:0 20px; margin:14px auto 50px; }
+.lustrum-route-summary__inner { box-sizing:border-box; max-width:1110px; margin:auto; background:linear-gradient(150deg,#f7fbf9,#fff 57%); border:1px solid #c9e2d8; border-radius:14px; padding:30px; box-shadow:0 8px 22px rgba(31,62,48,.05); color:#294239; }
+.lustrum-route-summary__eyebrow {color:#478971; font:bold 12px/1.4 Arial,sans-serif; letter-spacing:.13em; margin:0 0 10px;}
+.lustrum-route-summary h2 {font:700 clamp(24px,3vw,33px)/1.2 Arial,sans-serif!important; color:#276c56!important; margin:0 0 12px;}
+.lustrum-route-summary h3 {font:700 19px/1.3 Arial,sans-serif!important; color:#276c56!important; margin:20px 0 13px;}
+.lustrum-route-summary__lead {font:16px/1.65 Arial,sans-serif; color:#294239;margin:0 0 22px;}
+.lustrum-route-summary__stats {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 26px;}
+.lustrum-route-summary__stats div {background:#eaf6f0;border-radius:10px;padding:14px 10px;display:flex;flex-direction:column;text-align:center;}
+.lustrum-route-summary__stats strong {font:700 28px/1.1 Arial,sans-serif;color:#246e56;}
+.lustrum-route-summary__stats span {font:12px/1.4 Arial,sans-serif;color:#4f6c5f;margin-top:5px;}
+.lustrum-route-summary__scroll {overflow-x:auto;border:1px solid #dcebe4;border-radius:10px;}
+.lustrum-route-summary table {border-collapse:collapse!important;width:100%;min-width:650px;font:14px/1.5 Arial,sans-serif;color:#304c3f;background:#fff;}
+.lustrum-route-summary thead th {background:#eaf6f0;color:#2b624f;text-align:left;font-weight:700;}
+.lustrum-route-summary th,.lustrum-route-summary td {padding:12px 13px!important;border-bottom:1px solid #e1eee8!important;text-align:left;vertical-align:top;}
+.lustrum-route-summary tr:last-child td {border-bottom:none!important;}
+.lustrum-route-summary td:first-child {white-space:nowrap;}
+.lustrum-route-summary td small {display:block;font-size:12px;color:#698576;}
+.lustrum-route-summary__small {font:13px/1.65 Arial,sans-serif;color:#486658;margin:13px 0 0;}
+.lustrum-route-summary__small a {color:#28765b;text-decoration:underline;}
+.lustrum-route-summary__cars {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;}
+.lustrum-route-summary__cars>div {background:white;border:1px solid #dcebe4;border-radius:10px;padding:18px;}
+.lustrum-route-summary__cars h3 {margin:0 0 8px;font-size:17px!important;}
+.lustrum-route-summary__cars p {margin:0;font:14px/1.65 Arial,sans-serif;}
+.lustrum-day-tags {display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px;}
+.lustrum-day-tags span {font:700 11px/1.35 Arial,sans-serif;letter-spacing:.03em;color:#2a7159;background:#e8f4ee;border:1px solid #d3e9df;border-radius:100px;padding:5px 9px;}
+.route-art {height:330px;max-width:100%;overflow:hidden;position:relative;isolation:isolate;border-radius:9px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;box-sizing:border-box;background:linear-gradient(180deg,#7ab5a5 0%,#c9c9a2 55%,#ce8760 100%);font-family:Arial,sans-serif;color:#fff;}
+.route-art--2 {background:linear-gradient(180deg,#f6c99f 0%,#b27a65 56%,#5c493e 100%);}
+.route-art__kicker {position:absolute;top:23px;left:24px;font-size:11px;font-weight:700;letter-spacing:.12em;z-index:4;text-shadow:0 1px 5px rgba(0,0,0,.28);}
+.route-art__sun {position:absolute;width:125px;height:125px;right:11%;top:13%;border-radius:50%;background:#f2ddac;filter:blur(1px);box-shadow:0 0 45px rgba(255,224,161,.65);}
+.route-art__ridge {position:absolute;left:-12%;width:125%;height:55%;bottom:-7%;clip-path:polygon(0 85%,12% 44%,24% 69%,39% 12%,52% 64%,62% 22%,72% 69%,86% 17%,100% 66%,100% 100%,0 100%);z-index:1;}
+.route-art__ridge--back {background:#927e64;bottom:18%;opacity:.7;}
+.route-art--2 .route-art__ridge--back {background:#aa5c40;}
+.route-art__ridge--front {background:#513f36;height:42%;bottom:-9%;clip-path:polygon(0 50%,17% 65%,29% 21%,43% 60%,58% 25%,74% 67%,87% 18%,100% 48%,100% 100%,0 100%);z-index:2;opacity:.93;}
+.route-art--2 .route-art__ridge--front {background:#743a2b;}
+.route-art__label {font:700 clamp(22px,2.5vw,32px)/1.1 Arial,sans-serif;letter-spacing:.05em;z-index:4;text-shadow:0 2px 7px rgba(0,0,0,.32);}
+.route-art__detail {font:14px/1.5 Arial,sans-serif;z-index:4;margin-top:7px;text-shadow:0 2px 7px rgba(0,0,0,.3);}
+.elementor-price-table__integer-part {overflow-wrap:anywhere;font-size:clamp(29px,3.4vw,45px)!important;}
+@media(max-width:760px){.lustrum-route-summary{padding:0 12px}.lustrum-route-summary__inner{padding:20px 16px}.lustrum-route-summary__stats{grid-template-columns:repeat(2,minmax(0,1fr))}.lustrum-route-summary__cars{grid-template-columns:1fr}.route-art{height:270px;padding:22px}}
