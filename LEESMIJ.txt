@@ -1,4 +1,4 @@
-GitHub Pages: upload index.html en armenie-route-screenshot.png in de hoofdmap van de repository.
-De kaart staat op dezelfde plek als voorheen, met uitleg.
-De afbeelding is niet interactief; je kunt erop klikken om hem op volledig formaat te zien.
-De bestaande routekaart.html is niet meer nodig.
+Upload index.html en lustrumgooner-portret.png naar dezelfde hoofdmap van je GitHub Pages-repository.
+De enige HTML-wijziging is een compacte introductiesectie direct onder de hoofdtitel.
+De bestaande statische routekaart (armenie-route-screenshot.png) blijft ongewijzigd.
+Als de foto al in de repository staat, hoef je alleen index.html te vervangen.
