@@ -1,0 +1,4 @@
+GitHub Pages: upload index.html en armenie-route-screenshot.png in de hoofdmap van de repository.
+De kaart staat op dezelfde plek als voorheen, met uitleg.
+De afbeelding is niet interactief; je kunt erop klikken om hem op volledig formaat te zien.
+De bestaande routekaart.html is niet meer nodig.
