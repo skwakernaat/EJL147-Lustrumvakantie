@@ -63,3 +63,17 @@ Aanvulling - nieuw Lustrumgooner-portret in logo's (9 november 2026):
 OPMAK HERSTELD (9 NOVEMBER 2026)
 De technische bronadressen voor CSS, afbeeldingen en scripts onder /wp-content/ en /wp-includes/ zijn teruggezet naar lustrumguru.nl. De eerder vervangen domeinnaam lustrumgooner.nl bleef namelijk niet-functionerende CSS-bestanden opleveren. Zichtbare teksten, e-mailadressen, sociale links, andere navigatielinks en het Lustrumgooner-portret zijn ongewijzigd gebleven.
 Let op: de website blijft voor een deel van zijn opmaak afhankelijk van de externe bestanden op lustrumguru.nl. Voor volledige onafhankelijkheid moeten deze assets later lokaal worden opgeslagen.
+
+
+ROUTE EN SITE BIJGEWERKT (15 NOVEMBER 2026)
+Route:
+- Dag 3: rechtstreeks Areni → Jerevan (± 2–2,5 uur) in plaats van de omweg via Garni/Geghard (4–5 uur); middag in Jerevan.
+- Dag 4: Garni & Geghard verplaatst naar de middag van 17 augustus, zodat ook groep 2 ze ziet. Foto's van dag 3 en 4 omgewisseld.
+- Dag 8: canyon-hike en Haghpat/Sanahin zijn het vaste programma; raften is een bonus als de waterstand het toelaat.
+- Dag 13: optie B is nu cultuur in Jerevan (Matenadaran, Tsitsernakaberd, Ararat-brandyfabriek, Vernissage).
+- Tabel 'Waar slapen we?': aankomstnacht 13–14 aug als eigen regel; teksten van 16–18 en 20–22 aug aangepast.
+Site:
+- Dubbele (oude) teksten bij dag 5 en dag 6 samengevoegd.
+- Menu met Lustrumguru-bestemmingen vervangen door links binnen de pagina (Vluchten, Route & verblijven, Dagprogramma, Budget).
+- Blok 'Blijf op de hoogte van de Gooner' en de footer zijn bewust ongewijzigd gelaten.
+Routekaart (armenie-route-screenshot.png) niet aangepast: Garni/Geghard staan als 2.1/2.2 bij verblijf 2 (Jerevan) en dat klopt nog; alleen de getekende lijn loopt vanuit Areni nog via Garni.
