@@ -76,4 +76,4 @@ Site:
 - Dubbele (oude) teksten bij dag 5 en dag 6 samengevoegd.
 - Menu met Lustrumguru-bestemmingen vervangen door links binnen de pagina (Vluchten, Route & verblijven, Dagprogramma, Budget).
 - Blok 'Blijf op de hoogte van de Gooner' en de footer zijn bewust ongewijzigd gelaten.
-Routekaart (armenie-route-screenshot.png) niet aangepast: Garni/Geghard staan als 2.1/2.2 bij verblijf 2 (Jerevan) en dat klopt nog; alleen de getekende lijn loopt vanuit Areni nog via Garni.
+- Routekaart (armenie-route-screenshot.png) opnieuw getekend op een reliëfkaart van Armenië, passend bij de nieuwe route (Garni/Geghard als dagtrip vanuit Jerevan, aankomstnacht 0). Lijnen zijn schematisch, geen exacte wegen.
