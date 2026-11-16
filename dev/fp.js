@@ -285,13 +285,19 @@ window.FP = (() => {
       return count;
     };
     const candidates = n => {
-      const out = [n.localName];
-      const gc = genClasses(n);
-      gc.forEach(c => out.push('.' + c));
-      let w = n.parentElement, ctx = null;
+      const t = n.localName, out = [t];
+      const gc = genClasses(n).slice(0, 4);
+      const par = n.parentElement, prev = n.previousElementSibling;
+      const pc = par ? genClasses(par).slice(0, 3) : [];
+      gc.forEach(c => { out.push('.' + c, '.' + c + ':not(:last-child)', '.' + c + ':last-child', '.' + c + ':not(:first-child)', '.' + c + ':first-child'); });
+      let w = par, ctx = null;
       while (w && !ctx) { ctx = cls(w).find(c => /^elementor-widget-(?!container$|wrap$)[a-z-]+$/.test(c)); w = w.parentElement; }
-      if (ctx) { out.push('.' + ctx + ' ' + n.localName); gc.slice(0, 2).forEach(c => out.push('.' + ctx + ' .' + c)); }
-      if (n.parentElement) genClasses(n.parentElement).slice(0, 2).forEach(c => out.push('.' + c + ' > ' + n.localName));
+      if (ctx) {
+        out.push('.' + ctx + ' ' + t, '.' + ctx + ' ' + t + ':not(:last-child)', '.' + ctx + ' ' + t + ':last-child');
+        gc.slice(0, 2).forEach(c => out.push('.' + ctx + ' .' + c));
+      }
+      pc.forEach(c => { out.push('.' + c + ' > ' + t); gc.slice(0, 3).forEach(d => out.push('.' + c + ' > .' + d)); });
+      if (prev) genClasses(prev).slice(0, 2).forEach(c => { out.push('.' + c + ' + ' + t); gc.slice(0, 2).forEach(d => out.push('.' + c + ' + .' + d)); });
       return out;
     };
     const rules = new Map(); // selector -> Map(prop->value)
