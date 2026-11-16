@@ -95,6 +95,12 @@ window.FP = (() => {
     const ml = parseFloat(o['margin-left']), mr = parseFloat(o['margin-right']);
     if (o.display !== 'none' && ml > 0.5 && Math.abs(ml - mr) <= 1 && Math.abs(rect.width + ml + mr - pw) <= 1.5) {
       o['margin-left'] = o['margin-right'] = 'auto';
+    } else if (o.display !== 'none' && par && ml === 0 && mr === 0 && win.getComputedStyle(par).display === 'block' && rect.width > 0) {
+      // gecentreerd blok waarvan de browser de auto-marge als 0 meldt
+      const pr = par.getBoundingClientRect(), pcs = win.getComputedStyle(par);
+      const gl = rect.left - pr.left - parseFloat(pcs.paddingLeft) - parseFloat(pcs.borderLeftWidth);
+      const gr = pr.right - rect.right - parseFloat(pcs.paddingRight) - parseFloat(pcs.borderRightWidth);
+      if (gl > 0.5 && Math.abs(gl - gr) <= 1 && o.position !== 'absolute' && o.position !== 'fixed' && o.float === undefined) o['margin-left'] = o['margin-right'] = 'auto';
     }
     o.width = '-'; o.height = '-'; o.__pw = pw;
     o['object-fit'] = '-';
@@ -198,7 +204,7 @@ window.FP = (() => {
     const O = new Map(), N = new Map(), counterpart = new Map(), hidden = new Set();
     let unmatchedNew = 0;
     for (const [key, n] of newMap) {
-      if (n.id === '__fp_old') continue;
+      if (n.id === '__fp_old' || (n.closest && n.closest('header.header'))) continue;
       const o = oldMap.get(key);
       if (!o || o.localName !== n.localName) { unmatchedNew++; continue; }
       if (o.parentElement && hidden.has(o.parentElement)) { hidden.add(o); continue; }
@@ -309,6 +315,7 @@ window.FP = (() => {
       let best = null, bestCount = 1;
       if (level === 1 && nd.n !== document.body && nd.n !== document.documentElement) {
         for (const c of candidates(nd.n)) {
+          try { if (!nd.n.matches(c)) continue; } catch (e) { continue; }
           const cnt = safeCount(c, nd.ps, nd.p, nd.v);
           if (cnt > bestCount) { best = c; bestCount = cnt; }
         }

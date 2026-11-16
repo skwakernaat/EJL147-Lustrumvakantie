@@ -16,6 +16,14 @@ img {
   box-shadow: none;
 }
 
+.elementor img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -36,10 +44,11 @@ td {
 button {
   display: flex;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.7;
+  fill: currentColor;
 }
 
 input {
@@ -146,7 +155,8 @@ article {
   font-size: 32px;
 }
 
-.elementor-widget-heading h4 {
+.elementor-widget-heading h4,
+h4.elementor-heading-title {
   font-size: 24px;
 }
 
@@ -155,7 +165,7 @@ article {
   margin-bottom: 30px;
 }
 
-.elementor-widget-text-editor ul:not(:last-child) {
+.elementor-widget-text-editor ul {
   padding-left: 15px;
 }
 
@@ -191,7 +201,7 @@ article {
   display: flex;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 550 / 301.953;
   height: auto;
   border: 0;
   background-color: #000;
@@ -215,13 +225,35 @@ article {
   align-items: center;
 }
 
+.elementor-list-item-link-full_width a {
+  width: 100%;
+}
+
+.elementor-align-start .elementor-icon-list-item,
+.elementor-align-start .elementor-icon-list-item a {
+  justify-content: start;
+  text-align: start;
+}
+
+.elementor-align-center {
+  text-align: center;
+}
+
+.elementor-align-center .elementor-icon-list-item,
+.elementor-align-center .elementor-icon-list-item a {
+  justify-content: center;
+}
+
 .elementor-icon-list-icon {
   position: relative;
   display: flex;
+  text-align: var(--e-icon-list-icon-align);
 }
 
 .elementor-icon-list-icon i {
   display: block;
+  width: 1.25em;
+  font-size: var(--e-icon-list-icon-size);
 }
 
 .elementor-icon-list-text {
@@ -253,6 +285,7 @@ article {
 /* ---- Scheidingslijn en los pictogram ---- */
 .elementor-divider-separator {
   display: flex;
+  border-top: var(--divider-border-width, 0) var(--divider-border-style, solid) var(--divider-color, currentColor);
 }
 
 .elementor-widget-divider--element-align-center .elementor-divider-separator {
@@ -268,8 +301,7 @@ article {
 
 .elementor-divider__element {
   flex-shrink: 0;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 10px;
   font-size: 20px;
 }
 
@@ -300,7 +332,7 @@ article {
 }
 
 .elementor-spacer-inner {
-  height: 5px;
+  height: var(--spacer-size);
 }
 
 /* ---- Prijstabel ---- */
@@ -368,11 +400,12 @@ article {
   content: "";
   display: block;
   margin: 10px 12.5%;
+  border: 0 solid rgba(122, 122, 122, 0.3);
 }
 
 .elementor-price-table__feature-inner {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .elementor-price-table__feature-inner i {
@@ -381,10 +414,13 @@ article {
 }
 
 /* ---- Sociale knoppen ---- */
-.elementor-social-icons-wrapper {
-  display: inline-block;
+.elementor-widget-social-icons div {
   font-size: 0;
   line-height: 0;
+}
+
+.elementor-social-icons-wrapper {
+  display: inline-block;
 }
 
 .elementor-grid-item {
@@ -397,7 +433,6 @@ article {
   align-items: center;
   justify-content: center;
   border-radius: 10%;
-  color: #fff;
   font-size: 25px;
   line-height: 1;
   text-align: center;
@@ -423,7 +458,6 @@ article {
 
 .animated {
   animation-duration: 1.25s;
-  animation-fill-mode: both;
 }
 
 .animated.slideInUp {
