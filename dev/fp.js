@@ -100,7 +100,7 @@ window.FP = (() => {
       const pr = par.getBoundingClientRect(), pcs = win.getComputedStyle(par);
       const gl = rect.left - pr.left - parseFloat(pcs.paddingLeft) - parseFloat(pcs.borderLeftWidth);
       const gr = pr.right - rect.right - parseFloat(pcs.paddingRight) - parseFloat(pcs.borderRightWidth);
-      if (gl > 0.5 && Math.abs(gl - gr) <= 1 && o.position !== 'absolute' && o.position !== 'fixed' && o.float === undefined) o['margin-left'] = o['margin-right'] = 'auto';
+      if (gl > 0.5 && Math.abs(gl - gr) <= 1 && o.position !== 'absolute' && o.position !== 'fixed' && o.float === 'none') o['margin-left'] = o['margin-right'] = 'auto';
     }
     o.width = '-'; o.height = '-'; o.__pw = pw;
     o['object-fit'] = '-';
