@@ -1,2 +1,731 @@
-/* Basis: door onszelf geschreven opmaak (vervangt de stylesheets van lustrumguru.nl) */
-*,*::before,*::after{box-sizing:border-box}
+/* ==========================================================================
+   Basisopmaak EJL147 – zelf geschreven, vervangt de stylesheets die eerst
+   vanaf lustrumguru.nl werden geladen. Opmaak per los element: elementen.css.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---- Algemene elementen ---- */
+img {
+  max-width: 100%;
+  border: 0;
+  box-shadow: none;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+td {
+  font-size: 0.9em;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+input {
+  line-height: 20px;
+}
+
+svg {
+  display: block;
+}
+
+article {
+  word-break: break-word;
+}
+
+/* ---- Paginakader ---- */
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#content {
+  flex-grow: 1;
+}
+
+/* ---- Secties, kolommen en widgets ---- */
+.elementor-element,
+.elementor-section {
+  position: relative;
+}
+
+.elementor-container {
+  position: relative;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.elementor-section-boxed > .elementor-container {
+  max-width: 1140px;
+}
+
+.elementor-column {
+  display: flex;
+  min-height: 1px;
+}
+
+.elementor-widget-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+  padding: 10px;
+}
+
+.elementor-widget {
+  width: 100%;
+}
+
+.elementor-widget:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.elementor-screen-only {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .elementor-col-100 { width: 100%; }
+  .elementor-col-50 { width: 50%; }
+  .elementor-col-33 { width: 33.333%; }
+  .elementor-col-25 { width: 25%; }
+  .elementor-col-14 { width: 14.285%; }
+}
+
+@media (max-width: 767px) {
+  .elementor-container {
+    flex-wrap: wrap;
+  }
+
+  .elementor-column {
+    width: 100%;
+  }
+}
+
+/* ---- Koppen en tekst ---- */
+.elementor-heading-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.elementor-widget-heading h2 {
+  font-size: 32px;
+}
+
+.elementor-widget-heading h4 {
+  font-size: 24px;
+}
+
+.elementor-widget-text-editor p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.elementor-widget-text-editor ul:not(:last-child) {
+  padding-left: 15px;
+}
+
+.elementor-widget-text-editor a,
+.elementor-widget-icon-list a,
+.elementor-widget-image a,
+.lustrum-kaartsectie__beeldlink {
+  color: #2f5aae;
+  text-decoration: none;
+}
+
+/* ---- Afbeelding en video ---- */
+.elementor-widget-image {
+  text-align: center;
+}
+
+.elementor-widget-image a {
+  display: inline-block;
+}
+
+.elementor-widget-image img {
+  display: inline-block;
+  height: auto;
+  vertical-align: middle;
+}
+
+.elementor-widget-video .elementor-widget-container {
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.elementor-video {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  background-color: #000;
+  line-height: 1;
+}
+
+/* ---- Lijst met pictogrammen ---- */
+.elementor-icon-list-items {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.elementor-icon-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.elementor-icon-list-item > a {
+  display: flex;
+  align-items: center;
+}
+
+.elementor-icon-list-icon {
+  position: relative;
+  display: flex;
+}
+
+.elementor-icon-list-icon i {
+  display: block;
+}
+
+.elementor-icon-list-text {
+  display: block;
+}
+
+.elementor-icon-list-text:not(:first-child) {
+  align-self: center;
+  padding-left: 5px;
+}
+
+.elementor-icon-list--layout-inline .elementor-widget-container {
+  overflow: hidden;
+}
+
+.elementor-icon-list--layout-inline .elementor-icon-list-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.elementor-inline-item {
+  margin-right: 8px;
+  margin-left: 8px;
+  word-break: break-word;
+}
+
+/* ---- Scheidingslijn en los pictogram ---- */
+.elementor-divider-separator {
+  display: flex;
+}
+
+.elementor-widget-divider--element-align-center .elementor-divider-separator {
+  align-items: center;
+}
+
+.elementor-widget-divider--element-align-center .elementor-divider-separator::before,
+.elementor-widget-divider--element-align-center .elementor-divider-separator::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+}
+
+.elementor-divider__element {
+  flex-shrink: 0;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.elementor-icon {
+  color: #69727d;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.elementor-icon i {
+  position: relative;
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.elementor-icon i::before {
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+}
+
+.elementor-widget-icon .elementor-icon {
+  display: inline-block;
+  font-size: 50px;
+}
+
+.elementor-spacer-inner {
+  height: 5px;
+}
+
+/* ---- Prijstabel ---- */
+.elementor-widget-price-table .elementor-widget-container {
+  overflow: hidden;
+  background-color: #f9fafa;
+}
+
+.elementor-price-table {
+  text-align: center;
+}
+
+.elementor-price-table__header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #555;
+}
+
+.elementor-price-table__heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.elementor-price-table__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #555;
+  font-size: 65px;
+  font-weight: 800;
+}
+
+.elementor-price-table__price > span {
+  display: block;
+}
+
+.elementor-price-table__currency {
+  margin-right: 3px;
+  font-size: 0.3em;
+  line-height: 1;
+}
+
+.elementor-price-table__integer-part {
+  line-height: 0.8;
+}
+
+.elementor-price-table__features-list {
+  padding-left: 0;
+  line-height: 1;
+  list-style-type: none;
+}
+
+.elementor-price-table__features-list li {
+  font-size: 14px;
+}
+
+.elementor-price-table__features-list li:not(:first-child)::before {
+  content: "";
+  display: block;
+  margin: 10px 12.5%;
+}
+
+.elementor-price-table__feature-inner {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.elementor-price-table__feature-inner i {
+  margin-right: 10px;
+  font-size: 1.3em;
+}
+
+/* ---- Sociale knoppen ---- */
+.elementor-social-icons-wrapper {
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.elementor-grid-item {
+  display: inline-block;
+  word-break: break-word;
+}
+
+.elementor-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  color: #fff;
+  font-size: 25px;
+  line-height: 1;
+  text-align: center;
+}
+
+.elementor-social-icon i {
+  color: #fff;
+}
+
+.elementor-social-icon-facebook {
+  background-color: #3b5998;
+}
+
+.elementor-social-icon-instagram {
+  background-color: #262626;
+}
+
+/* ---- Binnenkomende animatie ---- */
+@keyframes ejl-omhoog-schuiven {
+  from { transform: translate3d(0, 100%, 0); visibility: visible; }
+  to { transform: none; }
+}
+
+.animated {
+  animation-duration: 1.25s;
+  animation-fill-mode: both;
+}
+
+.animated.slideInUp {
+  animation-name: ejl-omhoog-schuiven;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated { animation: none; }
+}
+
+/* ---- WhatsApp-knop met chatvenster ---- */
+.joinchat {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9000;
+  width: 0;
+  height: 0;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  transform: translateZ(0);
+}
+
+.joinchat > div {
+  position: absolute;
+}
+
+.joinchat__button {
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  box-shadow: 1px 6px 24px rgba(7, 94, 84, 0.24);
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+.joinchat__button::before {
+  content: "\f232";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.joinchat--chatbox .joinchat__button {
+  display: none;
+}
+
+.joinchat__tooltip {
+  position: absolute;
+  top: 14px;
+  right: 76px;
+  max-width: calc(100vw - 105px);
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 16px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 31px;
+  white-space: nowrap;
+  opacity: 0;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.joinchat__tooltip::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -6px;
+  border: 6px solid transparent;
+  border-right-width: 0;
+  border-left: 8px solid #fff;
+}
+
+.joinchat__tooltip > div {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.joinchat__button:hover .joinchat__tooltip {
+  opacity: 1;
+}
+
+.joinchat__badge {
+  top: -72px;
+  right: 4px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e82c0c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.joinchat--badge .joinchat__badge {
+  opacity: 1;
+}
+
+.joinchat__qr {
+  display: none;
+}
+
+.joinchat__chatbox {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 40px);
+  max-width: 400px;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  border-radius: 32px;
+  background: #fff linear-gradient(180deg, #25d466, #25d466 70px, rgba(37, 212, 102, 0.04) 70px, rgba(37, 212, 102, 0.04));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: 100% 100%;
+  transition: opacity 0.2s ease-out, transform 0s linear 0.2s;
+}
+
+.joinchat--chatbox .joinchat__chatbox {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.joinchat__chatbox > div,
+.joinchat__content > div {
+  display: flex;
+}
+
+.joinchat__header {
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  height: 70px;
+  padding: 0 70px 0 26px;
+  color: #fff;
+}
+
+.joinchat__wa {
+  width: 120px;
+  height: 28px;
+  fill: #fff;
+  opacity: 0.8;
+}
+
+.joinchat__close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.joinchat__close::before,
+.joinchat__close::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 9px;
+  width: 16px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.joinchat__close::after {
+  transform: rotate(-45deg);
+}
+
+.joinchat__scroll {
+  flex-direction: column-reverse;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.joinchat__content {
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0 8px;
+}
+
+.joinchat__chat {
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100px;
+  padding-bottom: 10px;
+}
+
+.joinchat__bubble {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 60px;
+  max-width: calc(100% - 52px);
+  min-height: 56px;
+  margin: 0 26px 16px;
+  padding: 15px 20px;
+  border-radius: 26px;
+  background-color: #fff;
+  color: #4a4a4a;
+  word-break: break-word;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.joinchat__bubble::before {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  left: -15px;
+  width: 17px;
+  height: 25px;
+  background-color: inherit;
+  clip-path: polygon(100% 0, 100% 100%, 0 68%);
+}
+
+.joinchat__open {
+  position: sticky;
+  bottom: 8px;
+  z-index: 2;
+  align-self: flex-end;
+  min-width: 60px;
+  height: 60px;
+  margin: 0 8px;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #25d466;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  cursor: pointer;
+}
+
+.joinchat__open__text {
+  max-width: 0;
+  overflow: hidden;
+  font-weight: 600;
+  line-height: 60px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: max-width 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.joinchat--chatbox .joinchat__open__text {
+  max-width: 324px;
+  padding: 0 4px 0 24px;
+  opacity: 1;
+}
+
+.joinchat__open__icon {
+  flex-shrink: 0;
+  width: 60px;
+  max-width: 60px;
+  height: 60px;
+  padding: 10.8px;
+}
+
+.joinchat__open__icon > path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 33px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-color-scheme: dark) {
+  .joinchat--dark-auto .joinchat__chatbox {
+    background-color: #1a1a1a;
+    background-image: linear-gradient(180deg, #1ea951, #1ea951 70px, rgba(37, 212, 102, 0.04) 70px, rgba(37, 212, 102, 0.04));
+  }
+
+  .joinchat--dark-auto .joinchat__bubble {
+    background-color: #505050;
+    color: #d8d8d8;
+  }
+}

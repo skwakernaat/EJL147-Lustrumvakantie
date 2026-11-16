@@ -105,7 +105,7 @@ window.FP = (() => {
       else o.height = r2(rect.height) + 'px';
     } else if (cls(e).includes('elementor-column') && pw > 0) {
       o.width = r2(rect.width / pw * 100) + '%';
-    } else if (kids(e).length === 0 && !e.textContent.trim() && o.display !== 'inline') {
+    } else if (kids(e).length === 0 && !e.textContent.trim() && o.display !== 'inline' && tag !== 'i' && !cls(e).includes('elementor-widget-wrap')) {
       o.height = g('height');
       if (o.position === 'absolute' || o.position === 'fixed' || /inline-/.test(o.display)) o.width = g('width');
     }
