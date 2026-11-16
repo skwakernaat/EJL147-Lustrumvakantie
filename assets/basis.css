@@ -45,9 +45,9 @@ button {
   display: flex;
   align-items: center;
   font-family: inherit;
-  font-size: 16px;
+  font-size: var(--bodyfontsize, 16px);
   font-weight: 700;
-  line-height: 1.7;
+  line-height: var(--bodylineheight, 1.7);
   fill: currentColor;
 }
 
@@ -129,6 +129,7 @@ article {
 
 .elementor-screen-only {
   position: absolute;
+  top: -10000em;
   display: block;
   width: 1px;
   height: 1px;
@@ -161,13 +162,14 @@ article {
   line-height: 1;
 }
 
+/* Kopgroottes volgen de variabelen uit de pagina zelf (kleiner op telefoon en tablet) */
 .elementor-widget-heading h2 {
-  font-size: 32px;
+  font-size: var(--h2fontsize, 32px);
 }
 
 .elementor-widget-heading h4,
 h4.elementor-heading-title {
-  font-size: 24px;
+  font-size: var(--h4fontsize, 24px);
 }
 
 .elementor-widget-text-editor p {
@@ -202,6 +204,13 @@ h4.elementor-heading-title {
   vertical-align: middle;
 }
 
+/* De video vult de hoogte van de kolom ernaast; onder elkaar (telefoon) is hij 150px hoog */
+.elementor-widget-video,
+.elementor-widget-video .elementor-widget-container,
+.elementor-widget-video .elementor-wrapper {
+  height: 100%;
+}
+
 .elementor-widget-video .elementor-widget-container {
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -211,8 +220,7 @@ h4.elementor-heading-title {
   display: flex;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 550 / 301.953;
-  height: auto;
+  height: 100%;
   border: 0;
   background-color: #000;
   line-height: 1;
@@ -766,6 +774,18 @@ h4.elementor-heading-title {
   stroke-width: 33px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+@media (max-width: 480px) {
+  .joinchat {
+    right: 6px;
+    bottom: 6px;
+  }
+
+  .joinchat__chatbox {
+    width: calc(100vw - 12px);
+    max-height: calc(100vh - 12px);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
