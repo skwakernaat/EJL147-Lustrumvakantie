@@ -197,6 +197,8 @@ window.FP = (() => {
     const level = opts.level || 1;
     const frame = await loadOld(opts.old);
     const od = frame.contentDocument, ow = frame.contentWindow;
+    // het oude script zet uitgerekte secties op schermbreedte; in het verborgen frame doen we dat hier na
+    od.querySelectorAll('.elementor-section-stretched').forEach(x => { x.style.width = od.documentElement.clientWidth + 'px'; x.style.left = '0px'; });
     await eager(od); await eager(document);
     await new Promise(r => setTimeout(r, 300));
     const oldMap = mapDoc(od), newMap = mapDoc(document);
