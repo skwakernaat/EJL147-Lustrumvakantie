@@ -63,6 +63,16 @@ article {
   word-break: break-word;
 }
 
+/* Pictogrammen: zelfde lettertypenaam als voorheen (Font Awesome via cdnjs levert die mee) */
+.fas,
+.far {
+  font-family: "Font Awesome 5 Free";
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+
 /* ---- Paginakader ---- */
 .wrapper {
   position: relative;
@@ -422,6 +432,7 @@ h4.elementor-heading-title {
 
 .elementor-social-icons-wrapper {
   display: inline-block;
+  width: 100%;
 }
 
 .elementor-grid-item {
@@ -433,6 +444,8 @@ h4.elementor-heading-title {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 2em;
+  height: 2em;
   border-radius: 10%;
   font-size: 25px;
   line-height: 1;

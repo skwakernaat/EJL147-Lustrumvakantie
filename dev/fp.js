@@ -15,7 +15,7 @@ window.FP = (() => {
     'aspect-ratio', 'filter'];
   const MUSTNOT = new Set(['width', 'height']); // '-' betekent hier: niet zetten
 
-  const kids = e => [...e.children].filter(c => !SKIP.has(c.tagName.toUpperCase()));
+  const kids = e => [...e.children].filter(c => !SKIP.has(c.tagName.toUpperCase()) && !c.tagName.includes('-') && !(c.tagName === 'IFRAME' && e.tagName === 'BODY'));
   const cls = e => (e.getAttribute('class') || '').split(/\s+/).filter(Boolean);
   const px = v => (/^-?[\d.]+px$/.test(v) ? parseFloat(v) : null);
   const r2 = x => Math.round(x * 100) / 100;
@@ -333,17 +333,22 @@ window.FP = (() => {
       css += sel + '{' + [...d].map(([p, v]) => p + ':' + v).join(';') + '}\n';
     }
 
-    // geometrie: bovenste elementen waarvan de maat afwijkt
+    // geometrie: diepste elementen waarvan maat of plek (t.o.v. de ouder) afwijkt
     const diag = [];
     const bad = new Set();
     for (const { n, o } of pairs) {
-      if (hidden.has(o)) continue;
+      if (hidden.has(o) || !o.parentElement || !n.parentElement) continue;
       const a = o.getBoundingClientRect(), b = n.getBoundingClientRect();
-      const dw = Math.abs(a.width - b.width) > 1, dh = Math.abs(a.height - b.height) > 1;
-      if (dw || dh) {
+      const pa = o.parentElement.getBoundingClientRect(), pb = n.parentElement.getBoundingClientRect();
+      const dx = (a.left - pa.left) - (b.left - pb.left), dy = (a.top - pa.top) - (b.top - pb.top);
+      if (Math.abs(a.width - b.width) > 1 || Math.abs(a.height - b.height) > 1 || Math.abs(dx) > 1 || Math.abs(dy) > 1) {
         bad.add(n);
-        if (!bad.has(n.parentElement)) diag.push([uniqueSel(n), Math.round(a.width) + 'x' + Math.round(a.height), Math.round(b.width) + 'x' + Math.round(b.height)]);
+        n.__fpd = [Math.round(a.width) + 'x' + Math.round(a.height), Math.round(b.width) + 'x' + Math.round(b.height), Math.round(dx) + ',' + Math.round(dy)];
       }
+    }
+    for (const n of bad) {
+      if ([...n.children].some(c => bad.has(c))) continue;
+      diag.push([uniqueSel(n)].concat(n.__fpd));
     }
     const res = {
       vw: innerWidth, level, pairs: pairs.length, unmatchedNew, hiddenOld: hidden.size, needs: needs.length,
