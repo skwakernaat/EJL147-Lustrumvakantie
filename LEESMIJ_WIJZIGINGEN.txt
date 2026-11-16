@@ -90,3 +90,12 @@ PLANNING VERFIJND (15 NOVEMBER 2026, MIDDAG)
 - Vluchten geboekt: € 424,28 p.p. (groep 1) en € 326,72 p.p. (groep 2), incl. 26 kg bagage. Budget bijgewerkt: OV in Nederland eruit, buffer 5%; groep 1 circa €1.645–€2.545, groep 2 circa €1.315–€2.040 p.p.
 - Budget omgezet naar één gemiddelde schatting: groep 1 circa €1.990, groep 2 circa €1.590 p.p.; opties apart (Tatev, raften, MTB, Azhdahak, ballonvaart).
 - Begroting als tabel op de site (sectie 'Wat kost de reis?', menu 'Budget'), met aanvinkbare opties die het totaal per groep bijwerken. Momentopname van de sheet van 15 november 2026.
+
+
+SITE LOS VAN LUSTRUMGURU.NL (16 NOVEMBER 2026)
+- De pagina laadt niets meer vanaf lustrumguru.nl. De opmaak die daar vandaan kwam is opnieuw geschreven in assets/basis.css (algemeen) en assets/elementen.css (per element); style.css is ongewijzigd.
+- Scripts van WordPress/Elementor zijn verwijderd; assets/site.js regelt de WhatsApp-knop (chatvenster, rood bolletje, doorlinken naar WhatsApp).
+- Trackers van Lustrumguru (Google Tag Manager, Google Analytics/Ads, TikTok, Snapchat, Clarity, Facebook, Cookiebot) en het cookie-icoon zijn verwijderd.
+- Nog extern: Font Awesome via cdnjs (pictogrammen), de YouTube-video en één emoji-afbeelding van s.w.org in de tooltip van de WhatsApp-knop.
+- Vergeleken met de oude versie in de browser op 1280, 900 en 375 px breed: alle elementen op dezelfde plek en dezelfde paginahoogte.
+- De oude versie staat in de branch backup-2026-11-16 (GitHub).
