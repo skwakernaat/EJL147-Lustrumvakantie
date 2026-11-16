@@ -69,7 +69,7 @@ window.FP = (() => {
     for (const c of CORNERS) o['border-' + c + '-radius'] = g('border-' + c + '-radius');
     const pos = g('position');
     o.position = pos;
-    for (const s of SIDES) o[s] = pos === 'static' ? '-' : g(s);
+    for (const s of SIDES) o[s] = pos === 'static' ? '0px' : (pos === 'relative' || pos === 'sticky' ? g(s) : '-');
     const bi = g('background-image');
     o['background-image'] = bi;
     for (const p of ['background-size', 'background-position', 'background-repeat', 'background-attachment']) o[p] = bi === 'none' ? '-' : g(p);
@@ -82,7 +82,7 @@ window.FP = (() => {
     if (o.display === 'none' && !full) return o;
     boxProps(g, o);
     const flex = /flex|grid/.test(o.display);
-    for (const p of FLEXC) o[p] = flex ? g(p) : '-';
+    for (const p of FLEXC) o[p] = (flex || full) ? g(p) : '-';
     o['grid-template-columns'] = /grid/.test(o.display) ? g('grid-template-columns') : '-';
     for (const p of PLAIN) o[p] = g(p);
     const mh = g('min-height'); o['min-height'] = mh === 'auto' ? '0px' : mh;
@@ -96,7 +96,7 @@ window.FP = (() => {
     if (o.display !== 'none' && ml > 0.5 && Math.abs(ml - mr) <= 1 && Math.abs(rect.width + ml + mr - pw) <= 1.5) {
       o['margin-left'] = o['margin-right'] = 'auto';
     }
-    o.width = '-'; o.height = '-';
+    o.width = '-'; o.height = '-'; o.__pw = pw;
     o['object-fit'] = '-';
     if (REPLACED.has(tag)) {
       o['object-fit'] = g('object-fit');
@@ -119,6 +119,7 @@ window.FP = (() => {
     if (c === 'none' || c === 'normal' || c === '') return { content: 'none' };
     const o = { content: c, display: g('display') };
     boxProps(g, o);
+    if (o.position === 'absolute' || o.position === 'fixed') for (const s of SIDES) o[s] = g(s);
     for (const p of ['width', 'height', 'color', 'font-family', 'font-size', 'font-weight', 'font-style', 'transform',
       'opacity', 'z-index', 'vertical-align', 'box-shadow', 'background-color', 'float', 'clear', 'flex-grow',
       'flex-shrink', 'flex-basis', 'text-align', 'overflow-x', 'overflow-y']) o[p] = g(p);
@@ -214,6 +215,7 @@ window.FP = (() => {
     };
     // waarde in de oude pagina voor nieuw element n (undefined = maakt niet uit)
     const oldVal = (n, ps, p) => {
+      if (p === '__pw') return undefined;
       const o = counterpart.get(n);
       if (!o) return undefined;
       const po = O.get(o);
@@ -224,21 +226,44 @@ window.FP = (() => {
       return q[p];
     };
 
+    // standaardwaarden van een pseudo-element
+    const st = document.createElement('style'); st.textContent = '.__fp_ref::before{content:"x"}'; document.head.appendChild(st);
+    const ref = document.createElement('span'); ref.className = '__fp_ref'; document.body.appendChild(ref);
+    const PD = readPseudo(window, ref, '::before');
+    const hostRef = read(window, ref, true);
+    ref.remove(); st.remove();
+    const PINH = ['color', 'font-family', 'font-size', 'font-weight', 'font-style', 'line-height', 'text-align'];
     const needs = [];
     for (const { n, o } of pairs) {
       const po = O.get(o), pn = N.get(n);
       if (po.display === 'none') { if (pn.display !== 'none') needs.push({ n, ps: '', p: 'display', v: 'none' }); continue; }
       const ppo = o.parentElement && O.get(o.parentElement), ppn = n.parentElement && N.get(n.parentElement);
       for (const p in po) {
+        if (p === '__pw') continue;
         const vo = po[p], vn = pn[p];
         if (vo === '-' || same(p, vo, vn)) continue;
+        if ((p === 'width' || p === 'height') && /px$/.test(vo) && REPLACED.has(n.localName) && Math.abs(po.__pw - pn.__pw) > 1) continue;
+        if ((p === 'width') && /%$/.test(vo) && false) continue;
         if (INH.includes(p) && ppo && ppn && ppo.display !== 'none' && same(p, vo, ppo[p]) && same(p, vn, ppn[p])) continue;
         needs.push({ n, ps: '', p, v: vo });
       }
       for (const ps of ['::before', '::after']) {
         const qo = pseudo(ow, o, ps), qn = pseudo(window, n, ps);
         if (qo.content === 'none') { if (qn.content !== 'none') needs.push({ n, ps, p: 'content', v: 'none' }); continue; }
-        for (const p in qo) { if (qo[p] !== '-' && !same(p, qo[p], qn[p])) needs.push({ n, ps, p, v: qo[p] }); }
+        const fresh = qn.content === 'none';
+        for (const p in qo) {
+          const vo = qo[p];
+          if (vo === '-') continue;
+          if (fresh) {
+            if (p === 'content') { needs.push({ n, ps, p, v: vo }); continue; }
+            if (PINH.includes(p)) { if (!same(p, vo, po[p])) needs.push({ n, ps, p, v: vo }); continue; }
+            if (!same(p, vo, PD[p])) needs.push({ n, ps, p, v: vo });
+          } else {
+            if (same(p, vo, qn[p])) continue;
+            if (PINH.includes(p) && same(p, vo, po[p]) && same(p, qn[p], pn[p])) continue;
+            needs.push({ n, ps, p, v: vo });
+          }
+        }
       }
     }
 
